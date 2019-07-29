@@ -71,6 +71,26 @@ Used within a maven build section as a exec-maven-plugin execution. The build ta
 
 ``` 
 
+## Java Command Line Example
+
+The APExchangeClean is a java program, so it can be run from a console session. In order to run as in a Java command line, the APExchangeClean.jar file will need to be download to the workstation running the command. After downloading it, (for example, to the target folder), it can be run with this command:
+
+```
+java -jar target/APExchangeClean.jar clean myAnypointUser MyAnypointPassword myExchangeOrg artifactId artifactVersion
+```
+
+**myAnypointUser** is the Anypoint user that will be used to perform all the registration steps. Note that this tool will create any client applications that are listed in the my‑clients.json file. In doing so, the user specified here becomes the owner of record for the application and its client credentials...no other users will be able to see these applications except the master org owner. Using a consistent user name here is important in order to have consistent visibility of the credentials for all automated API registrations.
+
+**MyAnypointPassword** is the password for the user specified above.
+
+**myExchangeOrgId** is the Anypoint master organization id.
+
+**artifactId** is the artifactId to delete from Exchange (as entered in the pom.xml file).
+
+**artifactVersion** is the version of the artifact to delete from Exchange (as entered in the pom.xml file).
+
+The APExchangeClean.jar must either be in the current running directory or on the Java classpath as a resource file. 
+
 ## API Reference
 Uses Anypoint Platform Exchange Exerience API described here:
 
